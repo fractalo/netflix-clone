@@ -17,11 +17,16 @@ body {
 
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 
     width: 100%;
     background-color: #111;
+    box-shadow: 0 5px 10px 0px rgba(0,0,0,0.75);
+
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
 }
 
 .navbar ul {
@@ -31,12 +36,14 @@ body {
 }
 
 .navbar li {
+    display: flex;
     list-style: none;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 .navbar li a {
     padding: 2px 2px;
+    font-size: 0.75rem;
     text-decoration: none;
     color: #fff;
 }
@@ -45,15 +52,42 @@ body {
     color: gray;
 }
 
-
-.logo {
-    height: 45px;
-    width: 90px;
+.navbar-end {
     display: flex;
     align-items: center;
+    gap: 10px;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 45px;
+    width: 70px;
+}
+
+.logo a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
 .logo img {
+    width: 100%;
+}
+
+.user-profile-button {
+    width: 25px;
+    height: 25px;
+}
+
+.user-profile-button:hover {
+    cursor: pointer;
+}
+
+.user-profile-button img {
     width: 100%;
 }
 
@@ -80,25 +114,34 @@ body {
     padding-bottom: 0.3rem;
 }
 
-.banner_btn {
+.banner_buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     margin-top: 5px;
     margin-bottom: 10px;
 }
 
-.banner_btn button {
-    width: 60px;
+.banner_button {
+    padding: 10px 25px;
     height: 30px;
-    border-radius: 2px;
-    border: 1px solid transparent;
+    border-radius: 3px;
+    border: none;
+    background-color: rgba(55, 55, 55, 0.7);
+    color: white;
+    font-size: 0.75rem; 
+    font-weight: 600;
+    line-height: 0.8rem;
+    white-space: nowrap;
 }
 
-.banner_btn button:hover {
-    background-color: rgb(171, 163, 163);
+.banner_button:hover {
+    background-color: rgba(138, 135, 135, 0.9);
     cursor: pointer;
 }
 
-.banner_btn button:active {
-    background-color: rgb(125, 117, 117);
+.banner_button:active {
+    background-color: rgba(106, 105, 105, 0.9);
 }
 
 .banner_description {
@@ -130,8 +173,9 @@ body {
 .row_poster {
     width: 100%;
     object-fit: contain;
-    max-height: 100px;
-    transition: transform 450ms;
+    max-height: 80px;
+    cursor: pointer;
+    transition: transform 450ms, max-height 200ms;
 }
 
 .row_poster:hover {
@@ -143,5 +187,41 @@ body {
 }
 
 .row_posterLarge {
-    max-height: 250px;
+    max-height: 200px;
+}
+
+/* footer */
+.footer {
+    color: gray;
+    padding: 50px 25px;
+    font-size: 0.75rem;
+}
+
+@media (min-width: 768px) {
+    .navbar li {
+        padding: 1rem;
+    }
+    
+    .navbar li a {
+        padding: 2px 2px;
+        font-size: 1rem;
+    }
+
+    .logo {
+        height: 45px;
+        width: 90px;
+    }
+
+    .user-profile-button {
+        width: 30px;
+        height: 30px;
+    }
+
+    .row_poster {
+        max-height: 100px;
+    }
+
+    .row_posterLarge {
+        max-height: 250px;
+    }
 }
